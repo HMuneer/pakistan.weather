@@ -1,0 +1,613 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<title>Pakistan weather</title>
+
+	<script src="https://kit.fontawesome.com/ccf5e222b5.js" crossorigin="anonymous"></script>
+
+	<style>
+	h1,h2,h3,h4,h5 {text-align: center;}
+	h6 {text-align: center;}
+	div {text-align: center;}
+.navbar
+	{
+	border-radius:15px;
+	background-color:black;
+	}
+	.navbar li 
+	{
+	float:left;
+	list-style:none;
+	padding: top;
+	}
+	.navbar ul	{
+	overflow:auto
+	}
+	ul {
+		
+	}
+	.navbar li a 
+	{
+	padding:12px 10px;
+	text-decoration:none;
+	color:White;
+	position: sticky;
+	right:0;
+	}
+	.Search bar
+	{
+	float:right;
+	color:black;
+	padding:10px;
+	}
+	input
+	{
+	border-radius:20px;
+	background-color:white;
+	color:black;
+	}
+	{
+	padding:auto;
+	margin:auto;
+	}
+	
+	html{
+	background-color: #f0f8ff;
+	}
+	
+	body{
+	font:16px/1.6 Arial,  sans-serif;
+	}
+	/* The footer is fixed to the bottom of the page */
+	footer{
+	position: fixed;
+	bottom: 0;
+	}
+	
+	@media (max-height:800px){
+	footer { position: static; }
+
+	}
+	
+	
+	.footer-distributed{
+	background-color: #2c292f;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 40px;
+	margin-top: 80px;
+	}
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+	}
+	
+	/* Footer left */
+	.footer-distributed .footer-left{
+	width: 30%;
+	}
+	
+	.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+	}
+	
+	/* The company logo */
+	.footer-distributed .footer-left img{
+	width: 30%;
+	}
+	
+	.footer-distributed h3 span{
+	color:  #e0ac1c;
+	}
+	
+	/*Footer links*/
+	.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	}
+	
+	.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+	}
+	
+	.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+	}
+	
+	/* Footer Center */
+	.footer-distributed .footer-center{
+	width: 35%;
+	}
+	
+	
+	.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+	}
+	
+	.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+	}
+	
+	.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+	}
+	
+	.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+	}
+	
+	.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;
+	}
+	
+	
+	/* Footer Right */
+	.footer-distributed .footer-right{
+	width: 30%;
+	}
+	.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+	}
+	
+	.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	}
+	
+	.footer-distributed .footer-icons{
+	margin-top: 25px;
+	}
+	
+	.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+	
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	
+	margin-right: 0px;
+	margin-bottom: 5px;
+	}
+	@media (max-width: 880px) {
+	
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+	display: block;
+	width: 100%;
+	margin-bottom: 40px;
+	text-align: center;
+	}
+	
+	.footer-distributed .footer-center i
+	{
+	margin-left: 0;
+	}
+	.developer {
+	color:white;
+	font-size:3px;
+	margin:10px;
+	text-align: center;
+	
+	}
+#center {
+	text-align:center;
+}
+	</style>
+	</head>
+	<body>
+	<header>
+	<nav class="navbar">
+	<ul>
+	<li><a href="#">Home</li></a>
+	<li><a href="#">Search</li></a>
+	<li><a href="#">Services</a></li>
+	<li><a href="#" >Contact us</li></a>
+	</ul>		
+	</nav>
+	</header>
+	<div class="Search bar">
+	<form>
+	<input id="center" type="text" placeholder="Search your city here">
+	</div>
+	<ins>
+	<div>
+	<h1>Pakistan Weather</h1>
+	</ins>
+	<ins><h2>Karachi</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/karachi/261158/weather-forecast/261158" target="_blank">
+	<img src="file:///storage/emulated/0/Download/quad e azam" alt="Karachi" height="130px" width="160px"></a>
+	<ins><h2>Lahore</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/lahore/260622/weather-forecast/260622" target="_blank">
+		<img src="file:///storage/emulated/0/Download/Minar e pakistan" alt="Lahore" height="250px" width="160px"></a>
+	<ins><h2>Islamabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/islamabad/258278/weather-forecast/258278" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Islamabad" alt="Islamabad" height="180px" width="160px"></a>
+	<ins><h2>Multan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/multan/260624/weather-forecast/260624" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Multan" alt="Multan" height="150px" width="160px"></a>
+	<ins><h2>Faisalabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/faisalabad/260626/weather-forecast/260626" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Clock Tower" alt="faisalabad" height="180px" width="160px"></a>
+	<ins><h2>Hyderabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/hyderabad/261159/weather-forecast/261159" target="blank">
+	<img src="file:///storage/emulated/0/Download/Hyderabad1" alt="hyderabad" height="200px" width="160px"></a>
+	<ins><h2>Rawalpindi</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/rawalpindi/260625/weather-forecast/260625" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Rawalpindi" alt="" height="160" width="160"></a>
+	<ins><h2>Gujranwala</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/gujranwala/260623/weather-forecast/260623" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Gujranwala" alt="" height="160" width="160"></a>
+	<ins><h2>Peshawar</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/peshawar/259370/weather-forecast/259370" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Peshawar" alt="" height="160" width="160"></a>
+	<h2><ins>Quetta</ins></h2>
+	<a href="https://www.accuweather.com/en/pk/quetta/257185/weather-forecast/257185" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Quetta" alt=""height="160" width="160"></a>
+	<ins><h2>Bahawalpur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/bahawalpur/259636/weather-forecast/259636" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Bahawalpur" alt="" height="160" width="160"></a>
+	<ins><h2>Sargodha</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sargodha/259647/weather-forecast/259647" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sargodha" alt="" height="160" width="160"></a>
+	<ins><h2>Sialkot</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sialkot/259649/weather-forecast/259649" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sialkot" alt="" height="160" width="160"></a>
+	<ins><h2>Sukkur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sukkur/260835/weather-forecast/260835" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sukkur" alt="" height="160" width="160"></a>
+	<ins><h2>Larkana</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/larkana/260831/weather-forecast/260831" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Larkana" alt="" height="160" width="160"></a>
+	<ins><h2>Sheikhupura</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sheikhupura/259648/weather-forecast/259648" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sheikhpura" alt="" height="160" width="160"></a>
+	<ins><h2>Rahim Yar khan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/rahimyar-khan/259644/weather-forecast/259644" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Rahim yar khan" alt="" height="160" width="160"></a>
+	<ins><h2>Jhang</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/jhang/259634/weather-forecast/259634" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Jhang" alt="" height="160" width="160"></a>
+	<ins><h2>Dera Ghazi Khan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/dera-ghazi-khan/259638/weather-forecast/259638" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Dera Ghazi Khan" alt="" height="160" width="160"></a>
+	<ins><h2>Gujrat</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/gujranwala/260623/weather-forecast/260623" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Gujrat" alt="" height="160" width="160"></a>
+	<ins><h2>Sahiwal</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sahiwal/259645/weather-forecast/259645" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sahiwal" alt="" height="160" width="160"></a>
+	<ins><h2>Wah Cantonment</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/wah/259635/weather-forecast/259635" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Wah Cantonment" alt="" height="160" width="160"></a>
+	<ins><h2>Mardan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mardan/258961/weather-forecast/258961" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mardan" alt="" height="160" width="160"></a>
+	<ins><h2>Kasur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kasur/259640/weather-forecast/259640" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kasur" alt="" height="160" width="160"></a>
+	<ins><h2>Okara</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/okara/259643/weather-forecast/259643" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Okara" alt="" height="160" width="160"></a>
+	<ins><h2>Mingora</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mingaora/258954/weather-forecast/258954" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mingora" alt="" height="160" width="160"></a>
+	<ins><h2>Nawabshah</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/nawabshah/260833/weather-forecast/260833" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Nawabshah" alt="" height="160" width="160"></a>
+	<ins><h2>Chiniot</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/chiniot/259637/weather-forecast/259637" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Chiniot" alt="" height="160" width="160"></a>
+	<ins><h2>Kotri</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kotri/260881/weather-forecast/260881" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kotri" alt="" height="160" width="160"></a>
+	<ins><h2>Kamoke</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kamoke/259622/weather-forecast/259622" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kamoke" alt="" height="160" width="160"></a>
+	<ins><h2>Hafizabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/hafizabad/259619/weather-forecast/259619" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Hafizabad" alt="" height="160" width="160"></a>
+	<ins><h2>Sadiqabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sadiqabad/259630/weather-forecast/259630" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sadiqabad" alt="" height="160" width="160"></a>
+	<ins><h2>Mirpur Khas</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mirpur-khas/260832/weather-forecast/260832" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mirpurkhas" alt="" height="160" width="160"></a>
+	<ins><h2>Burewala</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mandi-burewala/259642/weather-forecast/259642" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Burewala" alt="" height="160" width="160"></a>
+	<ins><h2>Kohat</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kohat/258959/weather-forecast/258959" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kohat" alt="" height="160" width="160"></a>
+	<ins><h2>Khanewal</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/khanewal/259641/weather-forecast/259641" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Khanewal" alt="" height="160" width="160"></a>
+	<ins><h2>Dera Ismail Khan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/dera-ismail-khan/258957/weather-forecast/258957" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Dera Ismail Khan" alt="" height="160" width="160"></a>
+	<ins><h2>Turbat</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/turbat/257186/weather-forecast/257186" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Turbat" alt="" height="160" width="160"></a>
+	<ins><h2>Muzaffar garh</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/muzaffargarh/259628/weather-forecast/259628" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Muzaffar Garh" alt="" height="160" width="160"></a>
+	<ins><h2>Abbotabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/abbottabad/258955/weather-forecast/258955" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Abbotabad" alt="" height="160" width="160"></a>
+	<ins><h2>Mandi Bahauddin</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mandi-bahauddin/259667/weather-forecast/259667" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mandi Bahauddin" alt="" height="160" width="160"></a>
+	<ins><h2>Shikarpur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/shikarpur/260834/weather-forecast/260834" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Shikarpur" alt="" height="160" width="160"></a>
+	<ins><h2>Jacobabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/jacobabad/260827/weather-forecast/260827" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Jacobabad" alt="" height="160" width="160"></a>
+	<ins><h2>Jhelum</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/jhelum/259639/weather-forecast/259639" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Jhelum" alt="" height="160" width="160"></a>
+	<ins><h2>Khanpur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/khanewal/259641/weather-forecast/259641" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Khanpur" alt="" height="160" width="160"></a>
+	<ins><h2>Khairpur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/khairpur/260828/weather-forecast/260828" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Khairpur" alt="" height="160" width="160"></a>
+	<ins><h2>Khuzdar</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/khuzdar/257210/weather-forecast/257210" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Khuzdar" alt="" height="160" width="160"></a>
+	<ins><h2>Pakpattan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/pakpattan/259629/weather-forecast/259629" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Pakpattan" alt="" height="160" width="160"></a>
+	<ins><h2>Hub</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/hab-chowki/257206/weather-forecast/257206" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Hub" alt="" height="160" width="160"></a>
+	<ins><h2>Daska</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/daska/259617/weather-forecast/259617" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Daska" alt="" height="160" width="160"></a>
+	<ins><h2>Gojra</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/gojra/259618/weather-forecast/259618" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Gojra" alt="" height=""160 width="160"></a>
+	<ins><h2>Dadu</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/dadu/260849/weather-forecast/260849" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Dadu" alt="" height="160" width="160"></a>
+	<ins><h2>Muridke</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/muridke/260160/weather-forecast/260160" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Muridke" alt="" height="160" width="160"></a>
+	<ins><h2>Bahawalnagar</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/bahawalnagar/259615/weather-forecast/259615" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Bahawalnagar" alt="" height="160" width="160"></a>
+	<ins><h2>Samundri</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/samundri/259758/weather-forecast/259758" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Samundri 1" alt="" height="160" width="160"></a>
+	<ins><h2>Tando Allahyar</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/tando-allahyar/260913/weather-forecast/260913" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Tando Allahyar" alt="" height="160" width="160"></a>
+	<ins><h2>Tando Adam</h2></ins>
+	<a href=""https://www.accuweather.com/en/pk/tando-adam/260830/weather-forecast/260830 target="_blank">
+	<img src="file:///storage/emulated/0/Download/Tando Adam" alt="" height="160" width="160"></a>
+	<ins><h2>Jaranwala</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/jaranwala/259620/weather-forecast/259620" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Jaranwala" alt="" height="160" width="160"></a>
+	<ins><h2>Chishtian</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/chishtian-mandi/259874/weather-forecast/259874" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Chishtian" alt="" height="160" width="160"></a>
+	<ins><h2>Attock</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/attock-city/259652/weather-forecast/259652" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Attock" alt="" height="160" width="160"></a>
+	<ins><h2>Vehari</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/vihari/1-259612_1_al/weather-forecast/1-259612_1_al" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Vehari" alt="" height="160" width="160"></a>
+	<ins><h2>Kot Abdul Malik</h2></ins>
+	<a href="https://www.google.com/search?q=kot+abdul+malik+weather&oq=kot+&aqs=chrome.1.69i59l3j6" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kot Abdul Malik" alt="" height="160" width="160"></a>
+	<ins><h2>Ferozwala</h2></ins>
+	<a href="https://www.google.com/search?q=ferozwala+weather&oq=fero&aqs=chrome.1.69i57jd=chrome" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Ferozwala" alt="" height="160" width="160"></a>
+	<ins><h2>Gawadar</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/gwadar/257205/weather-forecast/257205" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Gawadar" alt="" height="160" width="160"></a>
+	<ins><h2>Chakwal</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/chakwal/259616/weather-forecast/259616" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Chakwal" alt="" height="160" width="160"></a>
+	<ins><h2>Gujranwala Cantonment</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/gujranwala/260623/weather-forecast/260623" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Gujranwala" alt="" height="160" width="160"></a>
+	<ins><h2>Kamalia</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kamalia/259621/weather-forecast/259621" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kamalia" alt="" height="160" width="160"></a>
+	<ins><h2>Umarkot</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/umarkot/260920/weather-forecast/260920" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Umerkot" alt="" height="160" width="160"></a>
+	<ins><h2>Ahmedpur East</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/ahmadpur-east/259613/weather-forecast/259613" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Ahmed Pur East" alt="" height="160" width="160"></a>
+	<ins><h2>Kot Addu</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kot-addu/260391/weather-forecast/260391" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kot Addu" alt="" height="160" width="160"></a>
+	<ins><h2>Wazirabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/wazirabad/259632/weather-forecast/259632" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Wazirabad" alt="" height="160" width="160"></a>
+	<ins><h2>Mansehra</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mansehra/258963/weather-forecast/258963" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mansehra" alt="" height="160" width="160"></a>
+	<ins><h2>Layyah</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/leiah/259626/weather-forecast/259626" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Layyah" alt="" height="160" width="160"></a>
+	<ins><h2>Sawabi</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/swabi/259223/weather-forecast/259223" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sawabi" alt="" height="160" width="160"></a>
+	<ins><h2>Chaman</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/chaman/257191/weather-forecast/257191" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Chaman" alt="" height="160" width="160"></a>
+	<ins><h2>Taxila</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/taxila/260461/weather-forecast/260461" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Taxila" alt="" height="160" width="160"></a>
+	<ins><h2>Nowshera</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/nowshera/258960/weather-forecast/258960" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Nowshera" alt="" height="160" width="160"></a>
+	<ins><h2>Khushab</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/khushab/259625/weather-forecast/259625" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Khushab" alt="" height="160" width="160"></a>
+	<ins><h2>Shahdadkot</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/shahdadkot/260829/weather-forecast/260829" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Shahdadkot" alt="" height="160" width="160"></a>
+	<ins><h2>Mianwali</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mianwali/259627/weather-forecast/259627" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mianwali" alt="" height="160" width="160"></a>
+	<ins><h2>Kabal</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kabbal/259091/weather-forecast/259091" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kabal" alt="" height="160" width="160"></a>
+	<ins><h2>Lodhran</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/lodhran/259736/weather-forecast/259736" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Lodhran" alt="" height="160" width="160"></a>
+	<ins><h2>Hasilpur</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/hasilpur/260373/weather-forecast/260373" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Hasilpur" alt="" height="160" width="160"></a>
+	<ins><h2>Charsadda</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/charsadda/258956/weather-forecast/258956" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Charsadda" alt="" height="160" width="160"></a>
+	<ins><h2>Bhakkar</h2></ins>
+	<a href="https://www.accuweather.com/en/""pk/arifwala/259614/weather-forecast/259614" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Bhakkar" alt="" height="160" width="160"></a>
+	<ins><h2>Badin</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/badin/260844/weather-forecast/260844" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Badin" alt="" height="160" width="160"></a>
+	<ins><h2>Arif Wala</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/arifwala/259614/weather-forecast/259614" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Arifwala" alt="" height="160" width="160"></a>
+	<ins><h2>Ghotki</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/ghotki/260865/weather-forecast/260865" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Ghotki" alt="" height="160" width="160"></a>
+	<ins><h2>Sambrial</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sambrial/259674/weather-forecast/259674" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Sambrial" alt="" height="160" width="160"></a>
+	<ins><h2>Jatoi</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/jatoi-janubi/259718/weather-forecast/259718" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Jatoi" alt="" height="160" width="160"></a>
+	<ins><h2>Haroonabad</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/harunabad/259709/weather-forecast/259709" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Haroonabad" alt="" height="160" width="160"></a>
+	<ins><h2>Daharki</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/dharki/261127/weather-forecast/261127" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Daharki" alt="" height="160" width="160"></a>
+	<ins><h2>Narowal</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/narowal/259747/weather-forecast/259747" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Narowal" alt="" height="160" width="160"></a>
+	<ins><h2>Tando Muhammad Khan</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/tando-muhammad-khan/260916/weather-forecast/260916" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Tando Muhammad Khan" alt="" height="160" width="160"></a>
+	<ins><h2>Kamber Ali Khan</h2></ins>
+	<a href="https://www.google.com/search?q=kamber+ali+khan+weather&client=ms-android-sprint-us&sxsrf=AOaem
+	vLIzvy3yo9D0Hsp0r6duL8fWar30A%3A1634633065535&ei=aYVuYZGJINbT1sQP_4Oe-Ag&oq=kamber+ali+khan+weather&gs_lcp" 
+	target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kamber" alt="" height="160" width="160"></a>
+	<ins><h2>Mirpur Mathelo</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/mirpur-mathelo/260838/weather-forecast/260838" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Mathelo" alt="" height="160" width="160"></a>
+	<ins><h2>Kandhkot</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/kandhkot/260873/weather-forecast/260873" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Kandhkot" alt="" height="160" width="160"></a>
+	<ins><h2>Bhalwal</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/bhalwal/259685/weather-forecast/259685" target="_blank">
+	<img src="file:///storage/emulated/0/Download/Bhalwal" alt="" height="160" width="160"></a>
+	<ins><h2>Murree</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/murree/259745/weather-forecast/259745" target="_blank">
+	<img src="file:///storage/emulated/0/Download/murree" alt="" height="160" width="160"></a>
+	<ins><h2>Sibbi</h2></ins>
+	<a href="https://www.accuweather.com/en/pk/sibi/257231/weather-forecast/257231" target="_blank">
+	<img src="file:///storage/emulated/0/Download/sibbi" alt="" height="160" width="160"></a>
+</div>
+	</div>
+	<!-- footer. -->
+	
+	<footer class="footer-distributed">
+	
+	<div class="footer-left">
+		<h3>Pakistan<span>Weather</span></h3>
+	
+		<p class="footer-links">
+			<a href="#">Home</a>
+			|
+			<a href="#">Blog</a>
+			|
+			<a href="#">About</a>
+			|
+			<a href="#">Contact</a>
+		</p>
+	
+		<p class="footer-company-name">© 2021 Pakistan. weather Pvt. Ltd.</p>
+	</div>
+	
+	<div class="footer-center">
+		<div>
+
+			  <p><span>309 - Fortune Tower,
+				 Head office</span>
+				Shahrah e faisal, Karachi - 40071</p>
+		</div>
+	
+		<div>
+
+			<p>+92-1234567890</p>
+		</div>
+		<div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:support@Pakistan.weather.com">support@Pakistan.weather.com</a></p>
+		</div>
+	</div>
+	<div class="footer-right">
+		<p class="footer-company-about">
+			<span>About the company</span>
+			We offer training and skill Weather courses across Weather, Radar, Management, Science and Humanities.</p>
+			<a href="https://www.facebook.com/profile.php?id=100027925870102" ><i class="fab fa-facebook fa-2x"></i></a>&nbsp;&nbsp;
+			<a href="https://twitter.com/RealMuneerh?t=7dINhs2zfBls1QVzmxRodw&s=08" ><i class="fa fa-twitter fa-2x"></i></a>&nbsp;&nbsp;
+			<a href="https://www.linkedin.com/in/muneer-hussain-09b681227" ><i class="fa fa-linkedin fa-2x"></i></a>&nbsp;&nbsp;
+			<a href="https://instagram.com/hmuneer510?utm_medium=copy_link" ><i class="fa fa-instagram fa-2x"></i></a>
+		</div>
+		<div class="developer">Developed by Muneer Hussain</div>
+	</div>
+	</footer>
+	</body>
+	</html>
